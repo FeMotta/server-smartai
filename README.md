@@ -1,2 +1,1 @@
-# server-openApi
 # server-smartai
