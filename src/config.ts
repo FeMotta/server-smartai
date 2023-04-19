@@ -5,11 +5,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3001;
-const host = process.env.HOST || '192.168.0.11';
-const corsOrigin = process.env.CORS_ORIGIN || 'http://192.168.0.11:3000';
+
+const port: number = Number(process.env.PORT);
+const host: string = process.env.HOST || 'localhost';
+const corsOrigin: string = process.env.CORS_ORIGIN || '';
 
 app.use(cors({ origin: corsOrigin }));
 app.use(express.json());
 
 export { app, port, host };
+

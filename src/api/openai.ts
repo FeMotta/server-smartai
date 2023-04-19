@@ -5,7 +5,7 @@ dotenv.config();
 
 const openaiApiKey = process.env.OPENAI_API_KEY;
 
-export const generateTextCompletion = async (prompt) => {
+export const generateTextCompletion = async (prompt: string) => {
   const apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
 
   try {
