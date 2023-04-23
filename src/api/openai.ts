@@ -1,5 +1,6 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
+import { logger } from '../logger';
 
 dotenv.config();
 
@@ -30,10 +31,10 @@ export const generateTextCompletion = async (prompt: string) => {
     );
 
     const textCompletion = response.data.choices[0].text.trim();
-    console.log('Generated text completion:', textCompletion);
+    logger.info(textCompletion);
     return textCompletion;
   } catch (error) {
-    console.error('Error generating text completion:', error);
-    throw new Error('Error generating text completion');
+    logger.error(error as string);
+    throw new Error('Generating text completion');
   }
 };
