@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'smart-ai-server'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_43157207A50D4CDCA9677BFB45F4BCBD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_54372F88111C45EC83C091F301490996 }}
           package: .
