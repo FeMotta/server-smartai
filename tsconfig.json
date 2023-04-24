@@ -14,9 +14,11 @@
       "esModuleInterop": true, // Enable interoperability between CommonJS and ES Modules
       "sourceMap": true, // Generate source maps for your compiled code
       "allowImportingTsExtensions": true, // Allow importing files with .ts extension
+      "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
       "emitDeclarationOnly": true, // Only output d.ts files and not JavaScript files
       "declaration": true, // Generate declaration files for your compiled code
       "forceConsistentCasingInFileNames": true, // Allow default imports from modules with no default export
     },
+    "lib": ["ES2022", "DOM"],
     "include": ["src/**/*"], // Set the files to be included in the compilation
 }

@@ -6,7 +6,7 @@ import { logger } from './logger';
 app.use('/api', generateQuestionRouter);
 app.use('/api', checkAnswerRouter);
 
-app.get('/', (req, res) => {
+app.get('/', (req: any, res: { json: (arg0: { message: string; }) => any; }) => {
   return res.json({
     message: 'SmartAI API',
   })

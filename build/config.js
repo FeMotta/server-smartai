@@ -24,9 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.host = exports.port = exports.app = void 0;
-const express = __importStar(require("express"));
-const cors = __importStar(require("cors"));
-const dotenv = __importStar(require("dotenv"));
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 exports.app = app;
