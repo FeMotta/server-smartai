@@ -37,4 +37,3 @@ router.post('/generate-question', validations_1.validateGenerateQuestionRequest,
     }
 }));
 exports.default = router;
-//# sourceMappingURL=generate-question.js.map

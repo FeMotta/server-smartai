@@ -37,4 +37,3 @@ router.post('/check-answer', validations_1.validateCheckAnswerRequest, (req, res
     }
 }));
 exports.default = router;
-//# sourceMappingURL=check-answer.js.map

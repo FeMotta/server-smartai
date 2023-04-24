@@ -17,4 +17,3 @@ config_1.app.get('/', (req, res) => {
 config_1.app.listen(config_1.port, config_1.host, () => {
     logger_1.logger.info(`Server running at http://${config_1.host}:${config_1.port}`);
 });
-//# sourceMappingURL=index.js.map
