@@ -1,8 +1,8 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
+import { config } from 'dotenv';
 import { logger } from '../logger';
 
-dotenv.config();
+config();
 
 const openaiApiKey = process.env.OPENAI_API_KEY;
 

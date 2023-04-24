@@ -1,7 +1,7 @@
-import { app, port, host } from './config.ts';
-import generateQuestionRouter from './routes/generateQuestion.ts';
-import checkAnswerRouter from './routes/checkAnswer.ts';
-import { logger } from './logger.ts';
+import { app, port, host } from './config';
+import generateQuestionRouter from './routes/generateQuestion';
+import checkAnswerRouter from './routes/checkAnswer';
+import { logger } from './logger';
 
 app.use('/api', generateQuestionRouter);
 app.use('/api', checkAnswerRouter);
