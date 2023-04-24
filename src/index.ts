@@ -7,7 +7,7 @@ app.use('/api', generateQuestionRouter);
 app.use('/api', checkAnswerRouter);
 
 app.get('/', (req, res) => {
-  res.json({
+  return res.json({
     message: 'SmartAI API',
   })
 });
