@@ -17,3 +17,4 @@ exports.host = host;
 const corsOrigin = process.env.CORS_ORIGIN || 'https://react-smartai.ue.r.appspot.com';
 app.use((0, cors_1.default)({ origin: corsOrigin }));
 app.use(express_1.default.json());
+//# sourceMappingURL=config.js.map

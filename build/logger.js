@@ -10,3 +10,4 @@ const logger = {
     },
 };
 exports.logger = logger;
+//# sourceMappingURL=logger.js.map

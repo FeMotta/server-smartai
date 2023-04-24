@@ -1,20 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "*": ["./src/*"]
-    },
     "moduleResolution": "node",
     "target": "ES6", 
     "module": "CommonJS", // Specify the module format for your compiled code
-    "lib": ["ES2022", "DOM"],
     "outDir": "./build", // Set the directory where your compiled code will be output
     "rootDir": "./src", // Set the directory where your TypeScript source files are located
     "strict": true, // Enable strict type checking and other strict mode features
     "esModuleInterop": true, // Enable interoperability between CommonJS and ES Modules
     "sourceMap": true, // Generate source maps for your compiled code
-    "emitDeclarationOnly": true, // Only output d.ts files and not JavaScript files
     "declaration": true, // Generate declaration files for your compiled code
   },
-  "include": ["src/**/*"], // Set the files to be included in the compilation
+  "include": ["src/**/*.ts"], // Set the files to be included in the compilation
+  "exclude": ["node_modules", "**/*.spec.ts"] // Set the files to be excluded from the compilation
 }

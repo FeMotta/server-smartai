@@ -14,9 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateTextCompletion = void 0;
 const axios_1 = __importDefault(require("axios"));
-const dotenv_1 = __importDefault(require("dotenv"));
+const dotenv_1 = require("dotenv");
 const logger_1 = require("../logger");
-dotenv_1.default.config();
+(0, dotenv_1.config)();
 const openaiApiKey = process.env.OPENAI_API_KEY;
 const generateTextCompletion = (prompt) => __awaiter(void 0, void 0, void 0, function* () {
     const apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
@@ -46,3 +46,4 @@ const generateTextCompletion = (prompt) => __awaiter(void 0, void 0, void 0, fun
     }
 });
 exports.generateTextCompletion = generateTextCompletion;
+//# sourceMappingURL=openai.js.map

@@ -1,6 +1,6 @@
 import { app, port, host } from './config';
-import generateQuestionRouter from './routes/generateQuestion';
-import checkAnswerRouter from './routes/checkAnswer';
+import generateQuestionRouter from './routes/generate-question';
+import checkAnswerRouter from './routes/check-answer';
 import { logger } from './logger';
 
 app.use('/api', generateQuestionRouter);

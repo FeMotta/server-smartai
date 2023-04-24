@@ -3,12 +3,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_ts_1 = require("./config.ts");
-const generateQuestion_ts_1 = __importDefault(require("./routes/generateQuestion.ts"));
-const checkAnswer_ts_1 = __importDefault(require("./routes/checkAnswer.ts"));
-const logger_ts_1 = require("./logger.ts");
-config_ts_1.app.use('/api', generateQuestion_ts_1.default);
-config_ts_1.app.use('/api', checkAnswer_ts_1.default);
-config_ts_1.app.listen(config_ts_1.port, config_ts_1.host, () => {
-    logger_ts_1.logger.info(`Server running at http://${config_ts_1.host}:${config_ts_1.port}`);
+const config_1 = require("./config");
+const generate_question_1 = __importDefault(require("./routes/generate-question"));
+const check_answer_1 = __importDefault(require("./routes/check-answer"));
+const logger_1 = require("./logger");
+config_1.app.use('/api', generate_question_1.default);
+config_1.app.use('/api', check_answer_1.default);
+config_1.app.get('/', (req, res) => {
+    return res.json({
+        message: 'SmartAI API',
+    });
 });
+config_1.app.listen(config_1.port, config_1.host, () => {
+    logger_1.logger.info(`Server running at http://${config_1.host}:${config_1.port}`);
+});
+//# sourceMappingURL=index.js.map

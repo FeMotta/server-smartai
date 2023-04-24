@@ -35,3 +35,4 @@ const validateCheckAnswerRequest = (req, res, next) => {
     next();
 };
 exports.validateCheckAnswerRequest = validateCheckAnswerRequest;
+//# sourceMappingURL=validations.js.map
