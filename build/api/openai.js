@@ -17,8 +17,7 @@ const axios_1 = __importDefault(require("axios"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const logger_1 = require("../logger");
 dotenv_1.default.config();
-const openaiApiKey = process.env.OPENAI_API_KEY;
-const generateTextCompletion = (prompt) => __awaiter(void 0, void 0, void 0, function* () {
+const generateTextCompletion = (prompt, apikey) => __awaiter(void 0, void 0, void 0, function* () {
     const apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
     try {
         const response = yield axios_1.default.post(apiUrl, {
@@ -33,7 +32,7 @@ const generateTextCompletion = (prompt) => __awaiter(void 0, void 0, void 0, fun
         }, {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${openaiApiKey}`,
+                'Authorization': `Bearer ${apikey}`,
             },
         });
         const textCompletion = response.data.choices[0].text.trim();

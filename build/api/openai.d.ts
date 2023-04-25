@@ -1,1 +1,1 @@
-export declare const generateTextCompletion: (prompt: string) => Promise<any>;
+export declare const generateTextCompletion: (prompt: string, apikey: string) => Promise<any>;

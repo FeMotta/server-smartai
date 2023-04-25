@@ -23,9 +23,10 @@ router.post('/check-answer', validations_1.validateCheckAnswerRequest, (req, res
     isProcessing = true;
     const question = req.body.question;
     const userAnswer = req.body.userAnswer;
-    const prompt = `Essa é a questão: '${question}', e essa a resposta: '${userAnswer}'? Está correto? se não, me ajude a melhorar.`;
+    const apikey = req.body.apikey;
+    const prompt = createAnswerPrompt(question, userAnswer);
     try {
-        const answerCheck = yield (0, openai_1.generateTextCompletion)(prompt);
+        const answerCheck = yield (0, openai_1.generateTextCompletion)(prompt, apikey);
         res.status(200).json({ answerCheck });
     }
     catch (error) {
@@ -36,4 +37,7 @@ router.post('/check-answer', validations_1.validateCheckAnswerRequest, (req, res
         isProcessing = false;
     }
 }));
+function createAnswerPrompt(question, userAnswer) {
+    return `Avalie a seguinte questão e resposta: Questão: "${question}". Resposta do usuário: "${userAnswer}". Está correto? Se não estiver correto, por favor, forneça uma explicação detalhada do erro e sugira uma resposta aprimorada ou correção para a questão ou resposta fornecida.`;
+}
 exports.default = router;
