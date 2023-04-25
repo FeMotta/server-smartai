@@ -4,9 +4,7 @@ import { logger } from '../logger';
 
 dotenv.config();
 
-const openaiApiKey = process.env.OPENAI_API_KEY;
-
-export const generateTextCompletion = async (prompt: string) => {
+export const generateTextCompletion = async (prompt: string, apikey: string) => {
   const apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
 
   try {
@@ -25,7 +23,7 @@ export const generateTextCompletion = async (prompt: string) => {
       {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${openaiApiKey}`,
+          'Authorization': `Bearer ${apikey}`,
         },
       }
     );

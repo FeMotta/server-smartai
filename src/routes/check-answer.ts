@@ -18,10 +18,12 @@ router.post('/check-answer', validateCheckAnswerRequest, async (req: Request, re
 
   const question: string = req.body.question;
   const userAnswer: string = req.body.userAnswer;
-  const prompt: string = `Essa é a questão: '${question}', e essa a resposta: '${userAnswer}'? Está correto? se não, me ajude a melhorar.`;
+  const apikey: string = req.body.apikey;
+  
+  const prompt: string = createAnswerPrompt(question, userAnswer);
 
   try {
-    const answerCheck: string = await generateTextCompletion(prompt);
+    const answerCheck: string = await generateTextCompletion(prompt, apikey);
     res.status(200).json({ answerCheck });
   } catch (error) {
     logger.error(error as string);
@@ -30,6 +32,10 @@ router.post('/check-answer', validateCheckAnswerRequest, async (req: Request, re
     isProcessing = false;
   }
 });
+
+function createAnswerPrompt(question: string, userAnswer: string): string {
+  return `Avalie a seguinte questão e resposta: Questão: "${question}". Resposta do usuário: "${userAnswer}". Está correto? Se não estiver correto, por favor, forneça uma explicação detalhada do erro e sugira uma resposta aprimorada ou correção para a questão ou resposta fornecida.`;
+}
 
 export default router;
 
